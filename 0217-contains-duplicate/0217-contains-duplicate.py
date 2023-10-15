@@ -4,7 +4,7 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] in hashmap: 
                 return True 
-            if nums[i] not in hashmap:           
+            elif nums[i] not in hashmap:           
                 hashmap[nums[i]] = 1     
         return False
                
