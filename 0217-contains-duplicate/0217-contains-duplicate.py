@@ -3,8 +3,9 @@ class Solution:
         hashmap = {} 
         for i in range(len(nums)):
             if nums[i] in hashmap: 
-                return True            
-            hashmap[nums[i]] = 1     
+                return True 
+            if nums[i] not in hashmap:           
+                hashmap[nums[i]] = 1     
         return False
                
                
