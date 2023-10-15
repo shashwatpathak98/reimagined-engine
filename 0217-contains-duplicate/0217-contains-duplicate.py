@@ -5,7 +5,7 @@ class Solution:
             key = nums[i]
             if key in hashmap: 
                 return True            
-            hashmap[nums[i]] =  1
+            hashmap[key] = 1
         return False
                
                
