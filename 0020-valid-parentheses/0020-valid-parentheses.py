@@ -2,20 +2,20 @@ class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
         dictionary = {')': '(', ']': '[', '}': '{'}
-        
-        for i in s:
-            if i in dictionary:
-                if len(stack) != 0:  
-                    lastelement = stack.pop() 
-                else:
-                    lastelement = "#"  
-                
-                if dictionary[i] != lastelement:  
-                    return False
+        string = s
+        empty = 0
+        for character in string:
+            if character in dictionary:
+                if len(stack) is empty:  
+                    lastcharacter = "!"                    
+                elif len(stack) is not empty:
+                    lastcharacter = stack.pop() 
+                if dictionary[character] is not lastcharacter:  
+                    return False       
             else:
-                stack.append(i)  
+                stack.append(character)  
                 
-        return len(stack) == 0
+        return len(stack) is empty
 
 
 
