@@ -3,10 +3,11 @@ class Solution:
         stack = []
         dictionary = {')': '(', ']': '[', '}': '{'}
         for character in string:
+            length = len(stack)
             if character in dictionary:
-                if len(stack) is 0:  
+                if length is 0:  
                     lastcharacter = "!"                    
-                if len(stack) is not 0:
+                if length is not 0:
                     lastcharacter = stack.pop() 
                 if dictionary[character] is not lastcharacter:  
                     return False       
