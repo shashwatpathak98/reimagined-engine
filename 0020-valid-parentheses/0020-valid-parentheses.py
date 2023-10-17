@@ -5,10 +5,7 @@ class Solution:
         for character in string:
             lengthOfStack = len(stack)
             if character in dictionary:
-                if lengthOfStack is 0:  
-                    lastcharacter = stack.append(" ")                    
-                if lengthOfStack is not 0:
-                    lastcharacter = stack.pop() 
+                lastcharacter = stack.append(" ") if lengthOfStack is 0 else stack.pop()
                 if dictionary[character] is not lastcharacter:  
                     return False       
             else:
