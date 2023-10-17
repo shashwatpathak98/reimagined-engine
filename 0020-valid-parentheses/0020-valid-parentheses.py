@@ -5,7 +5,7 @@ class Solution:
         
         for i in s:
             if i in dictionary:
-                if stack:  
+                if len(stack) != 0:  
                     lastelement = stack.pop() 
                 else:
                     lastelement = "#"  
@@ -15,7 +15,8 @@ class Solution:
             else:
                 stack.append(i)  
                 
-        return not stack  
+        return len(stack) == 0
+
 
 
 
