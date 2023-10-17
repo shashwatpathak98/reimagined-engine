@@ -8,7 +8,7 @@ class Solution:
             if character in dictionary:
                 if len(stack) is empty:  
                     lastcharacter = "!"                    
-                elif len(stack) is not empty:
+                if len(stack) is not empty:
                     lastcharacter = stack.pop() 
                 if dictionary[character] is not lastcharacter:  
                     return False       
