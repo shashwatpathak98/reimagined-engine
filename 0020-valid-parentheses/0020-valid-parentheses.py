@@ -9,7 +9,7 @@ class Solution:
             else:
                 stack.append(character)  
                 
-        return length_hint(stack) == 0
+        return len(stack) == 0
 
 
 
