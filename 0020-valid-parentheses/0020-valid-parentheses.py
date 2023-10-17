@@ -4,12 +4,12 @@ class Solution:
         dictionary = {')': '(', '}': '{', ']': '['}    
         for character in string: 
             if character in dictionary:
-                lastcharacter = stack.pop() if len(stack) != 0  else " "
+                lastcharacter = stack.pop() if stack != []  else " "
                 if dictionary[character] != lastcharacter: return False
             else:
                 stack.append(character)  
                 
-        return len(stack) == 0
+        return stack == []
 
 
 
