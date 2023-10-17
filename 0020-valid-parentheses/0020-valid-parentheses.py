@@ -4,8 +4,8 @@ class Solution:
         dictionary = {')': '(', ']': '[', '}': '{'}    
         for character in string: 
             if character in dictionary:
-                lastcharacter = stack.append(" ") if len(stack) is 0 else stack.pop()
-                if dictionary[character] is not lastcharacter: return False  
+                lastcharacter = stack.pop() if len(stack) != 0  else  stack.append(" ")  
+                if dictionary[character] != lastcharacter: return False  
             else:
                 stack.append(character)  
                 
