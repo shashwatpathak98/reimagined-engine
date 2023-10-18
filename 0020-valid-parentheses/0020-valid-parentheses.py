@@ -1,15 +1,20 @@
 class Solution:
     def isValid(self, string: str) -> bool:
         stack = []
-        dictionary = {')': '(', '}': '{', ']': '['}    
-        for character in string: 
-            if character in dictionary.keys():
-                lastcharacter = stack.pop() if stack != []  else " "
-                if dictionary[character] != lastcharacter: return False
+        for character in string:
+            if(stack != [] and character == ']' and stack[-1] == '['):
+                stack.pop()
+            elif(stack != [] and character == '}' and stack[-1] == '{'):
+                stack.pop()
+            elif(stack != [] and character == ')' and stack[-1] == '('):
+                stack.pop()               
             else:
-                stack.append(character)  
-                
-        return stack == []
+                stack.append(character)
+        print(stack)        
+        return stack == []                 
+
+
+    
 
 
 
