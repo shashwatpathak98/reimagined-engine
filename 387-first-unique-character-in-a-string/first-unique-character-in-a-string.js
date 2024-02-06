@@ -7,7 +7,7 @@ var firstUniqChar = function(s) {
     let count = {}
 
     for(let char of s){
-        if(count[char]) count[char]++;
+        if(char in count) count[char]++;
         else count[char] = 1;
     }
  
