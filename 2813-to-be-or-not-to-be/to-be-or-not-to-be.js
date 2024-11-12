@@ -5,14 +5,15 @@
 const expect = (val) => {
 
     return {
-        toBe: (expected) => {
-            if (val === expected){
+        toBe: function (expected) {
+            if (val === expected) {
                 return true
             }
             throw new Error("Not Equal")
-         },
-        notToBe: (expected) => {
-             if (val !== expected){
+
+        },
+        notToBe: function (expected) {
+            if (val !== expected) {
                 return true
             }
             throw new Error("Equal")
