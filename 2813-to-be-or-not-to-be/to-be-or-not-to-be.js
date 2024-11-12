@@ -4,20 +4,21 @@
  */
 const expect = (val) => {
 
-    const toBe = (expected) => {
-        if (val === expected) {
-            return true
+    return {
+        toBe: function(expected) {
+            if (val === expected) {
+                return true
+            }
+            throw new Error("Not Equal")
         }
-        throw new Error("Not Equal")
-    }
-
-    const notToBe = (expected) => {
-        if (val !== expected) {
-            return true
+        ,
+        notToBe: function(expected) {
+            if (val !== expected) {
+                return true
+            }
+            throw new Error("Equal")
         }
-        throw new Error("Equal")
     }
-    return { toBe, notToBe }
 
 };
 /**
