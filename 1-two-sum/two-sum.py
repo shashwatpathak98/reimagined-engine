@@ -12,7 +12,7 @@ class Solution:
                 hashmap[number] = index
             else:
                 return [hashmap[elem] , index]
-        return                 
+        return         
                
 
 
