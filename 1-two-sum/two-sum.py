@@ -5,11 +5,10 @@ class Solution:
         #         if nums[i] + nums[j] == target and i != j:
         #             return [i,j]
         hashmap = {}
-        for index , number in enumerate(nums):
-            currentElem = number
+        for index , currentElem in enumerate(nums):
             elem = target - currentElem
             if elem not in hashmap:
-                hashmap[number] = index
+                hashmap[currentElem] = index
             else:
                 return [hashmap[elem] , index]
         return         
