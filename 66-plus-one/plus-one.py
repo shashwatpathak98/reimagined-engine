@@ -18,7 +18,7 @@ class Solution:
                     else:
                         carry = 0    
         
-        return digits if carry == 0 else [1]+digits
+        return digits if carry == 0 else [carry]+digits
         
         
 
