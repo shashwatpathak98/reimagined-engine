@@ -7,4 +7,4 @@ class Solution:
                 return [i , hashmap[complement]]
             else:
                 hashmap[nums[i]] = i    
-        return ans
+    
