@@ -13,7 +13,8 @@ class Solution:
             else:
                 hash_map[key] = [s]
 
-        return list(hash_map.values())         
+        ans += hash_map.values()
+        return ans     
 
 
         
