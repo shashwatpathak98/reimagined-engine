@@ -5,10 +5,7 @@ class Solution:
 
         for row in grid:
             for i in row:
-                if i not in hash_map:
-                    hash_map[i] = 1
-                else:
-                    hash_map[i] += 1
+                hash_map[i] = hash_map.get(i , 0) + 1
 
         missing, repeated = -1, -1
         for i in range(1, n * n + 1):
