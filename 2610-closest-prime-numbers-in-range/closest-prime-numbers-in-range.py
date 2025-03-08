@@ -1,20 +1,21 @@
 class Solution:
     def closestPrimes(self, left: int, right: int) -> List[int]:
 
-        MAX = right + 1
-        is_prime = [True] * MAX
-        is_prime[0] = is_prime[1] = False
+        upper_limit = right + 1
+        array_primes = [True] * upper_limit
 
-        for i in range(2, int(MAX **0.5) + 1):
-            if is_prime[i]:
-                for j in range(i*i , MAX , i):
-                    is_prime[j] = False
+        array_primes[0] = array_primes[1] = False
 
-        primes = [ i for i in range(left , right+1) if is_prime[i]]
+        for i in range(2, int(upper_limit**0.5) + 1):
+            if array_primes[i]:
+                for j in range(i * i, upper_limit , i ):
+                    array_primes[j] = False
+        primes =  [ i for i in range(left , right+1) if array_primes[i]]
         if len(primes) < 2:
             return [-1,-1]
-        
-        return min(zip(primes , primes[1:]) , key=lambda pair: pair[1] - pair[0])
+
+        return min(zip(primes , primes[1:]) , key=lambda pair: pair[1] - pair[0])             
+
 
 
         
