@@ -8,7 +8,7 @@ class Solution:
             for num in rows:
                 hash_map[num] = hash_map.get(num , 0) + 1
 
-        missing , repeated = -1, -1
+        missing , repeated = -inf, -inf
         for i in range(1, n * n + 1):
             if i not in hash_map:
                 missing = i
