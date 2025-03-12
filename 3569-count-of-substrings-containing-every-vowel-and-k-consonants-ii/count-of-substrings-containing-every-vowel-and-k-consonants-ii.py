@@ -1,9 +1,10 @@
 class Solution:
+
     def _isVowel(self, s:str) -> bool:
         return s in "aeiou"
 
-    def _atLeastK(self, word: str, k :int) -> int:
-        start, count, vowels , consonants = 0,0,{},0
+    def _atLeastK(self, word: str , k: int) -> int:
+        start , count , consonants , vowels = 0, 0, 0, {}
 
         for end , char in enumerate(word):
             if self._isVowel(char):
@@ -19,13 +20,15 @@ class Solution:
                     if vowels[word[start]] == 0:
                         del vowels[word[start]]
                 else:
-                    consonants -= 1        
+                    consonants -= 1
                 start += 1
-        return count                
+
+        return count                    
 
 
     def countOfSubstrings(self, word: str, k: int) -> int:
         return self._atLeastK(word , k) - self._atLeastK(word , k+1)
+
 
 
 
