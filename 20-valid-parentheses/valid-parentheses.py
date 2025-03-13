@@ -6,11 +6,9 @@ class Solution:
             if len(stack) == 0 or c in ['(','{','[']:
                 stack.append(c)
             else:
-                if c == ")" and stack[-1] == "(":
-                    stack.pop()
-                elif c == "}" and stack[-1] == "{":
-                    stack.pop()
-                elif c == "]" and stack[-1] == '[':
+                if ((c == ")"  and stack[-1] == "(") or \
+                   (c == "}" and stack[-1] == "{") or  \
+                   (c == "]" and stack[-1] == '[')):
                     stack.pop()
                 else:
                     return False    
