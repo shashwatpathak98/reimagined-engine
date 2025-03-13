@@ -13,7 +13,7 @@ class Solution:
                 elif c == "]" and stack[-1] == '[':
                     stack.pop()
                 else:
-                    stack.append(c)    
+                    return False    
         return len(stack) == 0                
 
 
