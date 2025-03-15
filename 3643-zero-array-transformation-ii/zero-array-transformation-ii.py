@@ -6,34 +6,32 @@ class Solution:
 
         if not self.can_form_zero_array(nums, queries, right):
             return -1
-
+        
         while left <= right:
             middle = left + (right - left) // 2
             if self.can_form_zero_array(nums, queries, middle):
                 right = middle - 1
             else:
-                left = middle + 1
-        return left                
+                left = middle + 1    
+        return left
 
+    def can_form_zero_array(self, nums: List[int], queries: List[List[int]], k:int) -> bool:
 
-    def can_form_zero_array(self , nums: List[int], queries: List[List[int]] , k:int):
         n = len(nums)
         total_sum = 0
         difference_array = [0] * (n+1)
 
         for query_index in range(k):
-            start, end, val = queries[query_index]
+            start, end, value = queries[query_index]
 
-            difference_array[start] += val
-            difference_array[end+1] -= val    
+            difference_array[start] += value
+            difference_array[end+1] -= value
 
         for num_index in range(n):
             total_sum += difference_array[num_index]
             if total_sum < nums[num_index]:
                 return False
-        return True
-
-
+        return True        
 
 
 
