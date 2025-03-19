@@ -6,15 +6,13 @@ class Solution:
         max_length = 0
 
         for right in range(len(nums)):
-            while (nums[right] & curr_mask) != 0:
+            while (curr_mask & nums[right]) != 0:
                 curr_mask ^= nums[left]
                 left += 1
 
             curr_mask |= nums[right]
-            max_length = max(max_length , right - left + 1)
+            max_length = max(max_length, right - left + 1)
         return max_length    
 
 
-
-
-
+        
