@@ -5,7 +5,7 @@ class Solution:
 
         n = len(alnum_string) - 1
         l,r = 0, n
-        for i in range(n):
+        while l < r:
             if alnum_string[l] == alnum_string[r]:
                 l+= 1
                 r-= 1
