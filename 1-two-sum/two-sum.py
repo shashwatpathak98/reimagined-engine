@@ -9,7 +9,7 @@ class Solution:
         # return []
 
         # Two Pointers
-        nums_with_index = sorted([[num, i] for i, num in enumerate(nums)])
+        nums_with_index = sorted([(num, i) for i, num in enumerate(nums)])
         n = len(nums_with_index) - 1
         l,r = 0,n
         while l<r:
@@ -21,8 +21,7 @@ class Solution:
             else:
                 r-=1
         return []        
-                      
-
+                    
 
 
 
